@@ -1,0 +1,36 @@
+{
+  "tfidf_params": {
+    "max_features": 5000,
+    "min_df": 2,
+    "max_df": 0.95,
+    "ngram_range": [1, 2],
+    "lowercase": true,
+    "stop_words": "english"
+  },
+  "spacy_params": {
+    "model_name": "en_core_web_sm",
+    "entity_types": [
+      "SKILLS",
+      "EXPERIENCE",
+      "EDUCATION",
+      "CERTIFICATIONS",
+      "ORG",
+      "PERSON"
+    ]
+  },
+  "entity_matching_weights": {
+    "skills": 0.4,
+    "experience": 0.3,
+    "education": 0.2,
+    "certifications": 0.1
+  },
+  "scoring_weights": {
+    "tfidf_similarity": 0.6,
+    "entity_matching": 0.4
+  },
+  "thresholds": {
+    "similarity_threshold": 0.5,
+    "confidence_threshold": 0.6,
+    "high_match_threshold": 0.8
+  }
+}

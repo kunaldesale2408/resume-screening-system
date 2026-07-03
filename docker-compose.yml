@@ -1,0 +1,76 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: resume_screening_api
+    ports:
+      - "8000:8000"
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+      - DEBUG=False
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - resume_network
+    depends_on:
+      - setup
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    container_name: resume_screening_web
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_LOGGER_LEVEL=info
+      - API_URL=http://backend:8000
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    env_file:
+      - .env
+    networks:
+      - resume_network
+    depends_on:
+      - backend
+    command: streamlit run src/web/streamlit_app.py --server.address=0.0.0.0 --server.port=8501
+
+  setup:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: resume_screening_setup
+    volumes:
+      - ./models:/app/models
+    env_file:
+      - .env
+    networks:
+      - resume_network
+    command: python -m spacy download en_core_web_sm
+    profiles:
+      - setup
+
+networks:
+  resume_network:
+    driver: bridge
+
+volumes:
+  data:
+  models:
