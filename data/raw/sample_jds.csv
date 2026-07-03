@@ -1,0 +1,90 @@
+id,title,company,text
+jd_001,Senior Python Developer,Tech Corp,"Senior Python Developer
+Tech Corp - San Francisco, CA
+
+About the Role:
+We are seeking a Senior Python Developer to join our growing engineering team.
+
+Key Responsibilities:
+- Design and develop Python applications using FastAPI
+- Implement machine learning features
+- Lead code reviews and mentor junior developers
+- Collaborate with product and design teams
+
+Requirements:
+- 5+ years of Python development experience
+- Strong knowledge of FastAPI and REST API development
+- Experience with machine learning frameworks (TensorFlow, scikit-learn)
+- Proficiency with Git and version control
+- Docker and containerization experience
+- Team leadership experience
+
+Preferred Qualifications:
+- NLP or computer vision experience
+- Cloud deployment experience (AWS, GCP)
+- Agile/Scrum experience
+
+Compensation:
+- Competitive salary
+- Health insurance
+- Remote work options"
+jd_002,Full Stack Developer,Web Solutions,"Full Stack Developer
+Web Solutions - New York, NY
+
+About the Role:
+Join our team as a Full Stack Developer and build scalable web applications.
+
+Key Responsibilities:
+- Develop React frontend applications
+- Build and maintain REST APIs using Node.js
+- Design database schemas and optimize queries
+- Implement security best practices
+
+Requirements:
+- 3+ years of full stack development experience
+- React proficiency
+- Node.js and Express experience
+- SQL and NoSQL database knowledge
+- Git version control
+- REST API design understanding
+
+Preferred Qualifications:
+- TypeScript experience
+- Testing frameworks experience
+- AWS or cloud platform experience
+- Agile development experience
+
+Compensation:
+- Competitive salary
+- Health insurance
+- Professional development budget"
+jd_003,Machine Learning Engineer,AI Startup,"Machine Learning Engineer
+AI Startup - Remote
+
+About the Role:
+Build state-of-the-art ML models that power our AI platform.
+
+Key Responsibilities:
+- Develop and train deep learning models
+- Implement NLP and computer vision solutions
+- Deploy and optimize models for production
+- Collaborate with data engineers and product teams
+
+Requirements:
+- 4+ years of machine learning experience
+- TensorFlow or PyTorch expertise
+- Python programming proficiency
+- Deep learning fundamentals
+- Docker and containerization knowledge
+- Kubernetes or orchestration experience
+
+Preferred Qualifications:
+- Research paper publication
+- Kaggle competition participation
+- Production ML system experience
+- AWS or GCP experience
+
+Compensation:
+- Competitive salary
+- Remote work
+- Professional development"
