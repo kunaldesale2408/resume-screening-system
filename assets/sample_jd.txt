@@ -1,0 +1,48 @@
+# Sample Job Description
+# AI/ML Engineer - Position
+
+## Position Overview
+We are seeking an experienced AI/Machine Learning Engineer to join our Data Science team. The ideal candidate will have strong expertise in machine learning frameworks, NLP, and production-ready systems.
+
+## Responsibilities
+- Design and implement machine learning models for resume screening and talent matching
+- Develop NLP pipelines for text extraction and entity recognition
+- Build and maintain feature engineering workflows
+- Collaborate with product and backend teams to deploy ML models
+- Conduct experiments and analysis to improve model performance
+- Write clean, well-tested, and maintainable code
+- Participate in code reviews and knowledge sharing sessions
+
+## Required Skills
+- Python programming (3+ years)
+- Machine Learning fundamentals (Scikit-learn, TensorFlow, PyTorch)
+- Natural Language Processing (spaCy, NLTK, BERT)
+- Experience with TF-IDF, similarity metrics, and entity extraction
+- SQL and data manipulation (Pandas, NumPy)
+- Git and version control
+- Unit testing and debugging
+
+## Preferred Qualifications
+- 5+ years of professional software development experience
+- Experience building production ML systems
+- Knowledge of Docker and containerization
+- Experience with FastAPI or similar frameworks
+- Familiarity with resume parsing or recruitment tech
+- Contributions to open-source ML projects
+
+## Education
+- Bachelor's degree in Computer Science, Mathematics, or related field
+- Master's degree or relevant certifications (optional)
+
+## Nice to Have
+- Published papers or research in ML/NLP
+- Experience with cloud platforms (AWS, GCP, Azure)
+- Knowledge of distributed systems
+- Experience with Streamlit or similar visualization tools
+
+## Compensation & Benefits
+- Competitive salary ($120,000 - $180,000)
+- Health insurance and benefits
+- Professional development opportunities
+- Remote work options
+- Collaborative team environment

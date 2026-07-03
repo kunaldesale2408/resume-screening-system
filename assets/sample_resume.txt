@@ -1,0 +1,78 @@
+# Sample Resume
+
+## JOHN DOE
+San Francisco, CA 94105 | john.doe@email.com | (555) 123-4567 | LinkedIn: linkedin.com/in/johndoe
+
+## PROFESSIONAL SUMMARY
+Experienced AI/Machine Learning Engineer with 6+ years of expertise in building production-ready ML systems. Specialized in Natural Language Processing, feature engineering, and data pipeline development. Proven track record of delivering high-impact projects that improve business metrics by 40%+.
+
+## CORE COMPETENCIES
+- **Machine Learning**: Scikit-learn, TensorFlow, PyTorch, XGBoost
+- **NLP**: spaCy, NLTK, BERT, word embeddings, entity extraction
+- **Python Programming**: 8+ years, expert level
+- **Data Processing**: Pandas, NumPy, SQL, ETL pipelines
+- **Feature Engineering**: TF-IDF, embeddings, dimensionality reduction
+- **Deployment**: Docker, Kubernetes, FastAPI, AWS
+- **Tools**: Git, Jupyter, VS Code, Airflow
+
+## PROFESSIONAL EXPERIENCE
+
+### Senior Machine Learning Engineer | TechCorp AI
+San Francisco, CA | Jan 2021 - Present
+- Developed NLP pipeline for automated resume screening using spaCy and TF-IDF, achieving 85%+ accuracy
+- Designed feature engineering workflow processing 100K+ documents daily
+- Built FastAPI backend serving 1M+ requests monthly with sub-100ms latency
+- Led team of 3 engineers in implementing ML monitoring and A/B testing framework
+- Reduced model training time by 60% through optimized data preprocessing
+- Published 2 technical blog posts on production ML systems (50K+ views)
+
+### Machine Learning Engineer | DataFlow Inc.
+New York, NY | Jul 2018 - Dec 2020
+- Created recommendation system using collaborative filtering (Python, Scikit-learn)
+- Implemented entity extraction model achieving 92% F1-score
+- Deployed multiple models to production using Docker and Kubernetes
+- Mentored 2 junior engineers on ML best practices
+- Improved model accuracy from 78% to 89% through feature engineering
+
+### Data Scientist | StartupXYZ
+Boston, MA | Mar 2017 - Jun 2018
+- Built classification models for customer segmentation
+- Developed Streamlit dashboard for business stakeholders
+- Conducted A/B testing and statistical analysis
+- Cleaned and preprocessed data from multiple sources
+
+### Junior Python Developer | WebSolutions Ltd.
+Boston, MA | Jul 2016 - Feb 2017
+- Developed web scraping scripts using Python and BeautifulSoup
+- Created REST APIs using Flask
+- Participated in agile development cycles
+
+## EDUCATION
+
+### Master of Science in Computer Science
+MIT - Cambridge, MA
+Graduated: May 2016
+GPA: 3.8/4.0
+Focus: Machine Learning and NLP
+
+### Bachelor of Science in Mathematics & Computer Science
+Boston University - Boston, MA
+Graduated: May 2015
+GPA: 3.7/4.0
+Honors: Summa Cum Laude
+
+## CERTIFICATIONS & AWARDS
+- Deep Learning Specialization - Coursera (2019)
+- AWS Certified Machine Learning - Specialty (2020)
+- Best Paper Award - ML Conference 2021
+- Employee of the Year - TechCorp AI (2022)
+
+## PUBLICATIONS & OPEN SOURCE
+- "Production-Ready NLP Systems" - Published in AI Journal (2022)
+- Contributor: spaCy, scikit-learn GitHub repositories
+- 2K+ stars on personal ML projects GitHub
+
+## LANGUAGES
+- English (Native)
+- Spanish (Fluent)
+- Mandarin Chinese (Basic)
