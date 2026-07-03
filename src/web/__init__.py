@@ -1,3 +1,3 @@
 """
-Streamlit web application module.
+Streamlit web interface package.
 """
