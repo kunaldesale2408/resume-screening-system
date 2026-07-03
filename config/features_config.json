@@ -7,26 +7,22 @@
     "lowercase": true,
     "stop_words": "english"
   },
-  "spacy_params": {
-    "model_name": "en_core_web_sm",
-    "entity_types": [
-      "SKILLS",
-      "EXPERIENCE",
-      "EDUCATION",
-      "CERTIFICATIONS",
-      "ORG",
-      "PERSON"
-    ]
-  },
-  "entity_matching_weights": {
+  "entity_weights": {
     "skills": 0.4,
     "experience": 0.3,
     "education": 0.2,
     "certifications": 0.1
   },
-  "scoring_weights": {
-    "tfidf_similarity": 0.6,
-    "entity_matching": 0.4
+  "skill_categories": {
+    "programming": ["python", "java", "javascript", "c++", "c#", "ruby", "go", "rust", "php", "scala"],
+    "frameworks": ["fastapi", "django", "flask", "react", "vue", "angular", "node.js", "express", "spring"],
+    "ml_tools": ["tensorflow", "pytorch", "scikit-learn", "keras", "xgboost", "spacy", "nltk", "pandas", "numpy"],
+    "databases": ["sql", "postgresql", "mysql", "mongodb", "redis", "cassandra", "elasticsearch"],
+    "devops": ["docker", "kubernetes", "git", "jenkins", "aws", "gcp", "azure", "terraform"]
+  },
+  "feature_combination": {
+    "tfidf_weight": 0.6,
+    "entity_weight": 0.4
   },
   "thresholds": {
     "similarity_threshold": 0.5,
