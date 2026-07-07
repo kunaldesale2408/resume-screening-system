@@ -1,0 +1,74 @@
+id,name,email,text
+resume_001,John Doe,john@example.com,"John Doe
+Senior Python Developer
+Email: john@example.com | Phone: (555) 123-4567
+
+PROFESSIONAL SUMMARY
+Experienced Software Engineer with 5+ years in Python development and machine learning.
+
+EXPERIENCE
+Senior Python Developer - Tech Company (2021-Present)
+- Developed Python applications using FastAPI
+- Implemented machine learning models using scikit-learn and TensorFlow
+- Led team of 3 developers
+
+Python Developer - StartUp Inc (2018-2021)
+- Built REST APIs using Flask and FastAPI
+- Implemented NLP solutions using spaCy and NLTK
+
+EDUCATION
+BS Computer Science - State University (2018)
+
+SKILLS
+Programming: Python, Java, JavaScript, SQL
+ML/AI: Machine Learning, NLP, TensorFlow, scikit-learn, spaCy
+Tools: Git, Docker, FastAPI, Streamlit"
+resume_002,Jane Smith,jane@example.com,"Jane Smith
+Full Stack Developer
+Email: jane@example.com | Phone: (555) 234-5678
+
+PROFESSIONAL SUMMARY
+Full stack developer with 4+ years of experience building web applications.
+
+EXPERIENCE
+Full Stack Developer - Web Solutions Inc (2020-Present)
+- Built REST APIs using Node.js and Express
+- Developed React frontend applications
+- Managed PostgreSQL databases
+
+Junior Developer - StartUp (2018-2020)
+- Developed features using React and Node.js
+- Worked with SQL and MongoDB
+
+EDUCATION
+BS Information Technology - University (2018)
+
+SKILLS
+Frontend: React, JavaScript, HTML, CSS
+Backend: Node.js, Express, Python
+Databases: PostgreSQL, MongoDB
+Tools: Git, Docker, AWS"
+resume_003,Mike Johnson,mike@example.com,"Mike Johnson
+Machine Learning Engineer
+Email: mike@example.com | Phone: (555) 345-6789
+
+PROFESSIONAL SUMMARY
+Machine Learning Engineer with 6+ years of experience in AI/ML projects.
+
+EXPERIENCE
+ML Engineer - AI Startup (2019-Present)
+- Developed deep learning models using TensorFlow and PyTorch
+- Implemented NLP solutions for text classification
+- Deployed models to production using Docker and Kubernetes
+
+Data Scientist - Tech Company (2017-2019)
+- Built ML pipelines using Python and scikit-learn
+- Created data visualizations and dashboards
+
+EDUCATION
+MS Computer Science - Tech University (2017)
+
+SKILLS
+ML: TensorFlow, PyTorch, scikit-learn, XGBoost
+Programming: Python, R, SQL
+Tools: Docker, Kubernetes, AWS, Jupyter"
