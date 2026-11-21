@@ -1,0 +1,16 @@
+ANITA RAO
+
+SUMMARY
+Machine learning engineer with 4 years of experience building forecasting and NLP systems in Python.
+
+EXPERIENCE
+ML Engineer - RetailCo (Jun 2021 - Present)
+- Built demand forecasting models with scikit-learn and XGBoost on 3 years of sales data.
+- Served models through FastAPI and Docker on AWS.
+- Wrote SQL pipelines in PostgreSQL; pandas and NumPy for feature engineering.
+
+EDUCATION
+B.Tech in Computer Science, 2021
+
+SKILLS
+Python, scikit-learn, PyTorch, pandas, NumPy, SQL, FastAPI, Docker, AWS, Git

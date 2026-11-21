@@ -1,0 +1,15 @@
+VIKRAM SINGH
+
+SUMMARY
+Backend engineer with 6 years of experience in Java microservices.
+
+EXPERIENCE
+Senior Backend Engineer - PayCorp (2018 - Present)
+- Built Java and Spring Boot microservices exposing REST APIs.
+- Kafka, Redis, MySQL, Docker and Kubernetes.
+
+EDUCATION
+M.Tech Software Engineering, 2018
+
+SKILLS
+Java, Kafka, Redis, MySQL, Docker, Kubernetes, Git

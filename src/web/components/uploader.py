@@ -2,12 +2,11 @@
 File upload handlers for PDF and text inputs.
 """
 
-import io
 from typing import List, Optional, Tuple
 
 import streamlit as st
 
-from src.config import settings
+from src.preprocessing import ExtractionError, extract_text
 
 
 def upload_pdf_files() -> Optional[List[Tuple[str, bytes]]]:
@@ -20,10 +19,10 @@ def upload_pdf_files() -> Optional[List[Tuple[str, bytes]]]:
     st.subheader("📤 Upload Resumes")
     
     uploaded_files = st.file_uploader(
-        "Upload PDF resume(s)",
-        type=["pdf"],
+        "Upload resume(s)",
+        type=["pdf", "docx", "txt"],
         accept_multiple_files=True,
-        help="Upload one or more PDF resume files for batch processing",
+        help="Upload one or more resumes (PDF, DOCX or TXT) for batch processing",
     )
     
     if uploaded_files:
@@ -72,22 +71,16 @@ def upload_text_jd() -> Optional[str]:
     else:  # Upload File
         jd_file = st.file_uploader(
             "Upload job description file",
-            type=["txt", "pdf"],
-            help="Upload a TXT or PDF file containing the job description",
+            type=["txt", "pdf", "docx"],
+            help="Upload a TXT, PDF or DOCX file containing the job description",
         )
-        
+
         if jd_file:
-            if jd_file.type == "text/plain":
-                jd_text = jd_file.getvalue().decode("utf-8")
-            elif jd_file.type == "application/pdf":
-                try:
-                    import pdfplumber
-                    
-                    with pdfplumber.open(io.BytesIO(jd_file.getvalue())) as pdf:
-                        jd_text = "".join([page.extract_text() for page in pdf.pages])
-                except Exception as e:
-                    st.error(f"❌ Error reading PDF: {str(e)}")
-                    return None
+            try:
+                jd_text = extract_text(jd_file.getvalue(), jd_file.name)
+            except ExtractionError as e:
+                st.error(f"❌ {e}")
+                return None
     
     # Show preview
     if jd_text:

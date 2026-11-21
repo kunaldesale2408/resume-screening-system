@@ -1,0 +1,16 @@
+Machine Learning Engineer
+
+Responsibilities
+- Build and deploy machine learning models for demand forecasting and NLP.
+- Serve models through REST APIs.
+
+Requirements
+- 2+ years of experience with Python.
+- Experience with scikit-learn, pandas and NumPy.
+- Familiarity with TensorFlow or PyTorch.
+- Experience with FastAPI or Flask.
+- SQL and Git.
+- Bachelor's degree in Computer Science or a related field.
+
+Nice to have
+- Docker and AWS experience is a plus.

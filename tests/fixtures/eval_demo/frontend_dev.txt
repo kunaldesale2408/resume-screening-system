@@ -1,0 +1,15 @@
+PRIYA SHAH
+
+SUMMARY
+Frontend developer with 5 years of experience building React and TypeScript applications.
+
+EXPERIENCE
+Frontend Developer - WebWorks (Jan 2020 - Present)
+- Built React and TypeScript single-page apps consuming REST APIs.
+- Wrote accessible HTML and CSS; introduced GraphQL.
+
+EDUCATION
+B.Sc Computer Science, 2019
+
+SKILLS
+JavaScript, TypeScript, React, HTML, CSS, GraphQL, Git

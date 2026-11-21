@@ -357,4 +357,3 @@ newgrp docker
 
 - Review [API Documentation](API.md)
 - Check [Deployment Guide](DEPLOYMENT.md)
-- Explore [Validation Results](RESULTS.md)

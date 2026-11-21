@@ -64,8 +64,8 @@ The AI-Powered Resume Screening System follows a modular, layered architecture d
 - **Models**: Trained TF-IDF vectorizer, spaCy model, validation metrics
 
 ### 2. Core Processing Layer
-- **PDF Extraction**: `pdf_extractor.py` - Extracts text from PDFs
-- **Text Cleaning**: `text_cleaner.py` - Tokenization, lowercasing, stopword removal
+- **PDF Extraction**: `preprocessing/extractor.py` - Extracts text from PDFs
+- **Text Cleaning**: `preprocessing/cleaner.py` - Tokenization, lowercasing, stopword removal
 - **TF-IDF Vectorization**: Creates numerical representations of text
 - **Entity Extraction**: spaCy-based entity recognition (skills, experience, etc.)
 - **Similarity Calculation**: Cosine similarity between resume and JD vectors
