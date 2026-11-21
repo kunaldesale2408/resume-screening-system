@@ -27,8 +27,6 @@ services:
       start_period: 40s
     networks:
       - resume_network
-    depends_on:
-      - setup
 
   frontend:
     build:
@@ -51,21 +49,6 @@ services:
     depends_on:
       - backend
     command: streamlit run src/web/streamlit_app.py --server.address=0.0.0.0 --server.port=8501
-
-  setup:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.backend
-    container_name: resume_screening_setup
-    volumes:
-      - ./models:/app/models
-    env_file:
-      - .env
-    networks:
-      - resume_network
-    command: python -m spacy download en_core_web_sm
-    profiles:
-      - setup
 
 networks:
   resume_network:

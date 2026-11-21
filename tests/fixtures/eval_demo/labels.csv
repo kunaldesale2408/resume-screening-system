@@ -1,0 +1,13 @@
+resume,job,label
+ml_strong.txt,job_ml.txt,1
+ml_junior.txt,job_ml.txt,1
+frontend_dev.txt,job_ml.txt,0
+data_analyst.txt,job_ml.txt,0
+backend_java.txt,job_ml.txt,0
+chef.txt,job_ml.txt,0
+ml_strong.txt,job_frontend.txt,0
+ml_junior.txt,job_frontend.txt,0
+frontend_dev.txt,job_frontend.txt,1
+data_analyst.txt,job_frontend.txt,0
+backend_java.txt,job_frontend.txt,0
+chef.txt,job_frontend.txt,0

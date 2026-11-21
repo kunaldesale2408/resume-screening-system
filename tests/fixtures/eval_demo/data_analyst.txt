@@ -1,0 +1,14 @@
+SAMEER KHAN
+
+SUMMARY
+Data analyst with 3 years of experience in reporting.
+
+EXPERIENCE
+Data Analyst - FinServe (Mar 2021 - Present)
+- Built dashboards in Power BI and Tableau; wrote SQL queries; advanced Excel.
+
+EDUCATION
+B.Com, 2020
+
+SKILLS
+SQL, Excel, Power BI, Tableau, Data Visualization

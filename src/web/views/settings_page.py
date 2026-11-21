@@ -14,6 +14,10 @@ def render():
     st.markdown(
         "Configure matching parameters, thresholds, and feature weights."
     )
+    st.info(
+        "These controls are for experimenting and aren't applied to scoring yet. "
+        "The engine reads its weights and thresholds from `config/features_config.json`."
+    )
 
     # Create tabs for different settings sections
     tab1, tab2, tab3 = st.tabs(
@@ -248,8 +252,8 @@ def render_about():
             #### System Information
             - **Application**: {settings.APP_NAME}
             - **Version**: {settings.APP_VERSION}
-            - **Match Accuracy**: 85%+
-            - **Processing Speed**: Sub-minute for batch operations
+            - **Engine**: TF-IDF similarity + skill, experience and education matching
+            - **Accuracy**: measure it on your own labelled resumes with `scripts/evaluate.py`
             """
         )
 

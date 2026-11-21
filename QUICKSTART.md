@@ -240,7 +240,7 @@ maxUploadSize = 100
 ### Key Files
 - **Main App**: `src/web/streamlit_app.py`
 - **Components**: `src/web/components/`
-- **Pages**: `src/web/pages/`
+- **Pages**: `src/web/views/`
 - **Config**: `.streamlit/config.toml`
 
 ### API Documentation
@@ -287,7 +287,7 @@ uvicorn src.api.main:app --reload
 
 ## 📊 Performance Metrics
 
-- **Accuracy**: 85%+ on validated dataset
+- **Accuracy**: not yet measured; run `python scripts/evaluate.py` on labelled resumes
 - **Processing Speed**: ~1 resume/second
 - **Memory Usage**: ~500MB for typical use
 - **Concurrent Users**: 5-10 (single instance)

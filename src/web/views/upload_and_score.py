@@ -2,11 +2,11 @@
 Upload & Score page - Main scoring interface.
 """
 
-import io
-from typing import List, Tuple
+from typing import List
 
 import streamlit as st
-from src.config import settings
+
+from src.web import scoring_client
 from src.web.components import (
     display_resume_card,
     upload_pdf_files,
@@ -80,48 +80,37 @@ def score_resumes():
     progress_bar = st.progress(0)
     status_text = st.empty()
 
+    total_files = len(st.session_state.uploaded_files)
+    status_text.text(f"Extracting text and scoring {total_files} resume(s)...")
+    progress_bar.progress(0.1)
+
     try:
-        # Placeholder for actual scoring logic
-        # In production, this would call the matching engine
-
-        results = []
-        total_files = len(st.session_state.uploaded_files)
-
-        for idx, (filename, file_bytes) in enumerate(st.session_state.uploaded_files):
-            progress = (idx + 1) / total_files
-            progress_bar.progress(progress)
-            status_text.text(f"Processing {idx + 1}/{total_files}: {filename}...")
-
-            # Placeholder scores (replace with actual scoring)
-            overall_score = 0.75 + (idx * 0.05)
-            tfidf_score = 0.70 + (idx * 0.04)
-            entity_score = 0.80 + (idx * 0.03)
-
-            result = {
-                "filename": filename,
-                "overall_score": min(overall_score, 1.0),
-                "tfidf_score": min(tfidf_score, 1.0),
-                "entity_score": min(entity_score, 1.0),
-                "matched_skills": ["Python", "Machine Learning", "NLP"],
-                "matched_keywords": ["AI", "resume screening", "ranking"],
-                "candidate_name": filename.replace(".pdf", ""),
-            }
-            results.append(result)
-
-        # Sort by overall score
-        results.sort(key=lambda x: x["overall_score"], reverse=True)
-
-        st.session_state.scoring_results = results
-        status_text.empty()
-        progress_bar.empty()
-
-        st.success(f"✅ Scored {total_files} resume(s)!")
-
-    except Exception as e:
+        response = scoring_client.score(
+            st.session_state.job_description, st.session_state.uploaded_files
+        )
+    except scoring_client.ScoringError as e:
         progress_bar.empty()
         status_text.empty()
-        st.error(f"❌ Error during scoring: {str(e)}")
+        st.error(f"❌ {e}")
         st.session_state.scoring_results = None
+        return
+
+    progress_bar.progress(1.0)
+    st.session_state.scoring_results = response["results"]
+    st.session_state.job_summary = response["job"]
+    history = st.session_state.setdefault("screening_history", [])
+    history.append(
+        {
+            "results": response["results"],
+            "job": response["job"],
+            "processing_ms": response["processing_ms"],
+        }
+    )
+    status_text.empty()
+    progress_bar.empty()
+    st.success(
+        f"✅ Scored {total_files} resume(s) in {response['processing_ms'] / 1000:.1f} s"
+    )
 
 
 def display_scoring_results(results: List[dict]):
@@ -147,6 +136,15 @@ def display_scoring_results(results: List[dict]):
         min_score = min(r["overall_score"] for r in results)
         st.metric("Lowest Match", f"{min_score:.1%}")
 
+    job = st.session_state.get("job_summary")
+    if job:
+        with st.expander("🔍 What the job description asks for"):
+            st.markdown("**Required skills:** " + (", ".join(job["required_skills"]) or "none found"))
+            st.markdown("**Nice to have:** " + (", ".join(job["preferred_skills"]) or "none found"))
+            years = job["min_years"]
+            st.markdown(f"**Minimum experience:** {f'{years:g} years' if years else 'not stated'}")
+            st.markdown(f"**Education:** {job['education'] or 'not stated'}")
+
     st.markdown("---")
 
     # Display each result as a card
@@ -160,6 +158,10 @@ def display_scoring_results(results: List[dict]):
             matched_skills=result["matched_skills"],
             matched_keywords=result["matched_keywords"],
             candidate_name=result.get("candidate_name"),
+            missing_skills=result.get("missing_skills"),
+            recommendation=result.get("recommendation"),
+            years_experience=result.get("years_experience"),
+            education=result.get("education"),
         )
 
     # Export options

@@ -1,0 +1,11 @@
+Frontend Developer
+
+Requirements
+- 3+ years of experience building web applications with React and TypeScript.
+- Strong HTML, CSS and JavaScript.
+- Experience consuming REST APIs.
+- Git.
+- Bachelor's degree or equivalent experience.
+
+Nice to have
+- Experience with Node.js or GraphQL is a plus.

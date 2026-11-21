@@ -112,6 +112,10 @@ def render_ranked_results(results):
             matched_skills=result["matched_skills"],
             matched_keywords=result["matched_keywords"],
             candidate_name=result.get("candidate_name"),
+            missing_skills=result.get("missing_skills"),
+            recommendation=result.get("recommendation"),
+            years_experience=result.get("years_experience"),
+            education=result.get("education"),
         )
 
 

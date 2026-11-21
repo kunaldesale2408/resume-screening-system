@@ -1,0 +1,15 @@
+ROHAN MEHTA
+
+SUMMARY
+Recent graduate interested in machine learning.
+
+EXPERIENCE
+Data Science Intern - Analytics Lab (Jan 2023 - Dec 2024)
+- Trained classification models with scikit-learn and TensorFlow.
+- Built a Flask API for a churn model; cleaned data with pandas and NumPy.
+
+EDUCATION
+B.E. Information Technology, 2023
+
+SKILLS
+Python, scikit-learn, TensorFlow, pandas, NumPy, Flask, SQL, Git

@@ -96,7 +96,12 @@ def main():
 
     # Sidebar - Navigation
     with st.sidebar:
-        st.image("assets/logo.png", width=150) if Path("assets/logo.png").exists() else st.title("Resume Screener")
+        # A plain if/else: a one-line conditional expression would be echoed
+        # to the page by Streamlit's "magic" output.
+        if Path("assets/logo.png").exists():
+            st.image("assets/logo.png", width=150)
+        else:
+            st.title("Resume Screener")
 
         st.markdown("---")
 
@@ -117,29 +122,29 @@ def main():
             ### ℹ️ System Info
             - **App Name**: {settings.APP_NAME}
             - **Version**: {settings.APP_VERSION}
-            - **Match Accuracy**: 85%+
-            - **Processing Time**: Sub-minute
+            - **Engine**: TF-IDF + skill, experience and education matching
+            - **Config**: config/features_config.json
             """
         )
 
     # Page routing
     if page == "📤 Upload & Score":
-        from src.web.pages import upload_and_score
+        from src.web.views import upload_and_score
 
         upload_and_score.render()
 
     elif page == "📊 Results Dashboard":
-        from src.web.pages import results_dashboard
+        from src.web.views import results_dashboard
 
         results_dashboard.render()
 
     elif page == "📈 Analytics":
-        from src.web.pages import analytics
+        from src.web.views import analytics
 
         analytics.render()
 
     elif page == "⚙️ Settings":
-        from src.web.pages import settings_page
+        from src.web.views import settings_page
 
         settings_page.render()
 

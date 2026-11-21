@@ -16,6 +16,10 @@ def display_resume_card(
     matched_skills: List[str],
     matched_keywords: List[str],
     candidate_name: Optional[str] = None,
+    missing_skills: Optional[List[str]] = None,
+    recommendation: Optional[str] = None,
+    years_experience: Optional[float] = None,
+    education: Optional[str] = None,
 ) -> None:
     """
     Display a formatted resume match card.
@@ -29,17 +33,18 @@ def display_resume_card(
         matched_skills: List of matched skills
         matched_keywords: List of matched keywords
         candidate_name: Optional candidate name
+        missing_skills: Required skills (or skill groups) not found on the resume
+        recommendation: "Strong match", "Possible match" or "Weak match"
+        years_experience: Years of experience found on the resume
+        education: Highest degree found on the resume
     """
-    # Determine match quality
-    if overall_score >= 0.8:
-        match_class = "high-match"
-        match_emoji = "🟢"
-    elif overall_score >= 0.6:
-        match_class = "medium-match"
-        match_emoji = "🟡"
+    # Match quality comes from the scorer's thresholds (config/features_config.json)
+    if recommendation == "Strong match":
+        match_class, match_emoji = "high-match", "🟢"
+    elif recommendation == "Possible match":
+        match_class, match_emoji = "medium-match", "🟡"
     else:
-        match_class = "low-match"
-        match_emoji = "🔴"
+        match_class, match_emoji = "low-match", "🔴"
     
     # Create card container
     with st.container():
@@ -63,16 +68,24 @@ def display_resume_card(
         
         with col3:
             st.metric(f"{match_emoji} Match Score", f"{overall_score:.1%}")
-        
+            if recommendation:
+                st.caption(recommendation)
+
         # Score breakdown
         st.markdown("---")
-        breakdown_col1, breakdown_col2 = st.columns(2)
-        
+        breakdown_col1, breakdown_col2, breakdown_col3, breakdown_col4 = st.columns(4)
+
         with breakdown_col1:
             st.metric("TF-IDF Match", f"{tfidf_score:.1%}")
-        
+
         with breakdown_col2:
             st.metric("Entity Match", f"{entity_score:.1%}")
+
+        with breakdown_col3:
+            st.metric("Experience", "not found" if years_experience is None else f"{years_experience:g} yrs")
+
+        with breakdown_col4:
+            st.metric("Education", education or "not found")
         
         # Matched skills and keywords
         if matched_skills:
@@ -81,7 +94,13 @@ def display_resume_card(
             st.markdown(skill_badges)
             if len(matched_skills) > 5:
                 st.caption(f"... and {len(matched_skills) - 5} more")
-        
+
+        if missing_skills:
+            st.markdown("**⚠️ Missing required skills:**")
+            st.markdown(" ".join([f"`{skill}`" for skill in missing_skills[:6]]))
+            if len(missing_skills) > 6:
+                st.caption(f"... and {len(missing_skills) - 6} more")
+
         if matched_keywords:
             st.markdown("**📍 Matched Keywords:**")
             keyword_badges = " ".join([f"`{kw}`" for kw in matched_keywords[:8]])
